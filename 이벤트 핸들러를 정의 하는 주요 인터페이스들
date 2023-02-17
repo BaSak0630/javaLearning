@@ -1,0 +1,65 @@
+    [이벤트 핸들러를 정의 하는 주요 인터페이스들]
+
+    -윈도우의 상태 변화와 관련된 이벤트 핸들러들 정의
+    public interface WindowListener{
+        public void windowOpened(WindowEvent e);
+        public void windowClosing(WindowEvent e);
+        public void windowClosed(windowEvent e);
+        public void windowconified(WindowEvent e);
+        public void windowDeiconified(windowEvent e);
+        public void windowActivated(WindowEvent e);
+        public void windowDeactiovated(WindowEvent e);
+    }
+
+    - 버튼을 클릭할 때 호출되는 이벤트핸들러 정의 
+    public interface ActionListener{
+        public void actionPerformed(ActionEvent e); //버튼이 눌렸을 때 특정 함수 실행
+    }
+
+    - 키보드를 누를 때 호출되는 이벤트 핸들러들 정의
+    public interface KeyListener{
+        public void keyTyped(KeyEvent e); //일반적은 알파벳 
+        public void keyPressed(KeyEvent e); //control등 누르고 있어야하는 것들을 사용할 떄
+        public void keyReleased(KeyEvent e);
+    }
+
+    - 마우스를 조작할 때 호출되는 이벤트 핸들러들 정의 
+    public void MouseListener {
+        public void mouseClcked(MouseEvent e); //pressed와 released 동시
+        public void mousePressed(MouseEvent e);
+        public void mouseReleased(MouseEvent e);
+        public void mouseEntered(MouseEvent e); //윈도우 영역 안
+        public void mouseExited(MouseEvent e); //과 밖 인식
+    }
+    
+    - 마우스를 움직일 떄 호출되는 이벤트 핸들러들 정의
+    public interface MiuseMotionListener{
+        public void mouseDragged(MouseEvent e);  //마우스를 누른 상태에서 움직이는 때
+        public void mouseMoved(MouseEvent e); // 그냥 마우스를 움직이는 상태
+    }
+    //위에 MouseListener 와 MiuseMotionListener 가 따로 있는 이유는 시행횟수에 따라 
+    //처리해주는 것이 다를것이라 추측됨
+
+
+    - 스크롤바를 조작 할 때 호출되는 이벤트 핸들러 정의 
+    public interface AdjustmentListener{
+        public void adjustmentValueChanged(AdjustmentEvent e); //스크롤 
+    }
+
+    - 텍스트에 입력할 때 호출되는 이벤트 핸들러 정의
+    public interfacve TextListener {
+        public void textValueChanged(TextEvent e); //JTextfild 등 에서 입력할 때
+
+    }
+
+    - 체크박스나 리스트의 상태 변화시 호출되는 이벤트 핸들러 정의
+    public interface itemListener{
+        void itemStateChanged(ItemEvent e); 
+    }
+
+    - 윈도우가 활성화 되거나 비활성화 될 때 호출되는 이벤트 핸들러 정의
+    public interface FocusListener{
+        //전체 윈도우에서 Focus를 한개만 가진다 그것을 판단할 때 사용
+        public void focusGained(FocusEvent e); 
+        public void focusLost(FocusEvent e);
+    }
